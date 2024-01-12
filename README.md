@@ -1,6 +1,6 @@
 # Team-3
  
-## Foorumi -tyyppinen ajatus nettisivun takana, johon voi tarvittaessa lisäillä muutakin
+## Tietotekniikkasivusto -tyyppinen ajatus nettisivun takana, johon voi tarvittaessa lisäillä muutakin
 
 - Linkki pohjaratkaisuun:
 
