@@ -3,6 +3,7 @@
 ## Foorumi -tyyppinen ajatus nettisivun takana, johon voi tarvittaessa lisäillä muutakin
 
 - Linkki pohjaratkaisuun:
+*linkki*
 
 
 ### Anton Ollila
