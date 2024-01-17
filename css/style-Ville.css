@@ -1,0 +1,51 @@
+body{
+background-color: rgb(29, 25, 150);
+
+}
+.Header-part{
+    color: aliceblue;
+    font:  1.2rem "Fira Sans", sans-serif;
+}
+.Headline{
+    font-weight: 100;
+}
+
+a{
+    color: aliceblue;
+    background-color: blue;
+    font-style: italic;
+    font-family: inherit;
+    font-size: x-large;
+}
+.login{
+    text-align: right;
+    background-color: blue;
+    font-style: italic;
+    font-size:large;
+}
+nav{
+    
+}
+
+main{
+    background-color: aliceblue;
+
+}
+aside{
+    background-color: aliceblue;
+    border: 1px solid blue;
+    
+}
+
+section{
+    background-color: aliceblue;
+    border: 1px solid blue;
+
+}
+article{
+
+}
+footer{
+    color: aliceblue;
+    text-align: center;
+}
