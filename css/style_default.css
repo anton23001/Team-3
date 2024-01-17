@@ -1,0 +1,21 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: serif;
+    margin: 10px;
+}
+
+header, nav, main, aside, footer {
+    background-color: #eeeeee;
+    margin: 10px;
+}
+
+section {
+    background-color: #dddddd;
+    margin: 10px;
+}
+
+article {
+    background-color: #cccccc;
+    color: #000000;
+}

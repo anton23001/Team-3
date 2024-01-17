@@ -1,0 +1,39 @@
+/**
+This CSS-file contains the functionalities, which make the navigation bar and sidepanels look as intended.
+*/
+
+
+/* Makes ul-element in nav (navigation bar) as a flex box with its elements being displayed on the same row. */
+#navigation-bar > ul {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Makes the li-element in the ul-element to have a flexible size. */
+#navigation-bar > ul > li {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+/* Makes main-element as a box with its aside-elements and main-element being displayed on the same row. */
+#main-content {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Makes all child elements of the section-element (with class="content-section-child") to have a flexible size.*/
+.main-content-child {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Additionally makes the aside-tags to take 1/7 each of the page width. */
+#main-content > aside {
+    flex: 1;
+}
+
+/* Additionally makes the main-tag to take 5/7 of the page width. */
+#main-content > section {
+    flex: 5;
+}
