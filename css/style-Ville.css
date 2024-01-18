@@ -1,5 +1,5 @@
 body{
-background-color: rgb(29, 25, 150);
+background-color: #1d1996;
 
 }
 .Header-part{
@@ -11,41 +11,45 @@ background-color: rgb(29, 25, 150);
 }
 
 a{
-    color: aliceblue;
-    background-color: blue;
+    color: #f0f8ff;
     font-style: italic;
     font-family: inherit;
     font-size: x-large;
 }
 .login{
     text-align: right;
-    background-color: blue;
     font-style: italic;
     font-size:large;
 }
 nav{
-    
+    background-color: #0000ff;
 }
 
-main{
-    background-color: aliceblue;
+#main-content{
+    background-color: #f0f8ff;
 
 }
 aside{
-    background-color: aliceblue;
-    border: 1px solid blue;
+    background-color: #f0f8ff;
+    border: 1px solid #0000ff;
     
 }
 
 section{
-    background-color: aliceblue;
-    border: 1px solid blue;
+    background-color: #f0f8ff;
+    border: 1px solid #0000ff;
 
 }
-article{
 
+.content-section-child{
+    padding: 5px;
+}
+
+article{
+    padding: 5px;
 }
 footer{
-    color: aliceblue;
+    color: #f0f8ff;
     text-align: center;
 }
+
