@@ -1,0 +1,39 @@
+body{
+    text-align: center;
+}
+header{
+    background-color: #1d1996;
+    color: #f0f8ff;
+    font:  1.2rem "Fira Sans", sans-serif;
+}
+
+nav{
+    background-color: #0000ff;
+}
+
+nav a{
+    color: #f0f8ff;
+    font-style: italic;
+    font-size: x-large;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+label{
+
+}
+
+#button{
+    margin: 10px;
+}
+
+footer{
+    color: #f0f8ff;
+    text-align: center;
+    background-color: #1d1996;
+}

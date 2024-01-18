@@ -10,7 +10,8 @@ https://www.figma.com/file/uaWpSvWpAgtmfbA4ST5kBo/Projektity%C3%B6?type=design&n
 
 
 ### Ville Kylliäinen
-
+    Tein etusivulle style-Ville.css pohjan
+    Tein login sivun ja sille oman css:ssän
 
 ### Sebastian Weckström
 Aiomme luoda io-tech kaltaisen verkkokauppa-sivuston, koska siinä on mahdollista myöhemmin hyödyntää tietokantoja ja JavaScriptia.
