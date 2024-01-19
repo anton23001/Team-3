@@ -20,9 +20,12 @@ a{
     font-size: x-large;
 }
 .login{
-    text-align: right;
-    font-style: italic;
-    font-size:large;
+    border-radius: 25px; 
+    font-style: italic; 
+    color: #f0f8ff; 
+    background-color: #0000ff; 
+    float: right;
+    border: #0000ff solid;
 }
 nav{
     background-color: #0000ff;
