@@ -19,6 +19,11 @@ a{
     font-family: inherit;
     font-size: x-large;
 }
+
+a:hover{
+    background-color: #2828f4;
+}
+
 .login{
     border-radius: 25px; 
     font-style: italic; 
@@ -27,7 +32,16 @@ a{
     float: right;
     border: #0000ff solid;
     font-size: 18px;
+    cursor: pointer;
 }
+
+button:hover{
+    background-color: #2828f4;
+    color: #f0f8ff;
+    font-style: italic;
+    border: #f0f8ff solid;
+}
+
 nav{
     background-color: #0000ff;
 }
@@ -45,7 +59,7 @@ aside{
 section{
     background-color: #f0f8ff;
     border: 1px solid #0000ff;
-
+    overflow: scroll;
 }
 
 .content-section-child{
@@ -60,3 +74,7 @@ footer{
     text-align: center;
 }
 
+H1{
+    font-style: italic; 
+    color: #f0f8ff; 
+}

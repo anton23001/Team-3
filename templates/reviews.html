@@ -6,10 +6,138 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style_flexbox.css">
+        <link rel="stylesheet" href="../css/style-Ville.css">
     </head>
 
     <body>
-        <p> Tervetuloa tietotekniikkasivuston olemattomalle arvostelupalstalle! </p>
-        <a href="../index.html"> Etusivu </a>
+
+        <header class="Header-part">
+            <!-- Contains main header and login button. -->
+            <a  href="templates/login.html" >
+                <button type="button" class="login"> Kirjaudu / Rekister&ouml;idy</button></a>
+            <h1 class="Headline"> Tietotekniikkasivusto </h1>
+            <p> <i>Tietotekniikkaan liittyv&auml;&auml; tietoa tietotekniikasta kiinnostuneille.</i> </p>
+        </header>
+
+        <nav id="navigation-bar">
+            <!-- Contains navigation menu with Home, Uutiset, Arvostelut, Keskustelut -->
+
+            <ul>
+                <li> <a href="../index.html"> Etusivu </a> </li>
+                <li> <a href="../templates/news.html"> Uutiset </a> </li>
+                <li> <a href="../templates/reviews.html"> Arvostelut </a> </li>
+                <li> <a href="../templates/discussion.html"> Keskustelu </a> </li>
+            </ul>
+        </nav>
+
+        <main id="main-content">
+            <!-- Making main and aside tags as childs of a section tag makes it easier to make the aside tags on side. -->
+
+            <aside class="content-section-child">
+                <!-- Left sidebar -->
+
+                <h3> Viimeisimm&auml;t foorumi viestit </h3>
+                <p> Ihan paska tuote, en edes kokeillut. En suosittele. </p>
+            </aside>
+
+
+            <section class="content-section-child">
+                <!-- Section content -->
+                <h2> Tietotekniikka Arvostelut </h2>
+
+                <article>
+                    <h3> Article Header </h3>
+
+                    <p>
+                        Ornhgvshy vf orggre guna htyl.
+                        Rkcyvpvg vf orggre guna vzcyvpvg.
+                        Fvzcyr vf orggre guna pbzcyrk.
+                        Pbzcyrk vf orggre guna pbzcyvpngrq.
+                        Syng vf orggre guna arfgrq.
+                        Fcnefr vf orggre guna qrafr.
+                        Ernqnovyvgl pbhagf.
+                        Fcrpvny pnfrf nera'g fcrpvny rabhtu gb oernx gur ehyrf.
+                        Nygubhtu cenpgvpnyvgl orngf chevgl.
+                        Reebef fubhyq arire cnff fvyragyl.
+                        Hayrff rkcyvpvgyl fvyraprq.
+                        Va gur snpr bs nzovthvgl, ershfr gur grzcgngvba gb thrff.
+                        Gurer fubhyq or bar-- naq cersrenoyl bayl bar --boivbhf jnl gb qb vg.
+                        Nygubhtu gung jnl znl abg or boivbhf ng svefg hayrff lbh'er Qhgpu.
+                        Abj vf orggre guna arire.
+                        Nygubhtu arire vf bsgra orggre guna *evtug* abj.
+                        Vs gur vzcyrzragngvba vf uneq gb rkcynva, vg'f n onq vqrn.
+                        Vs gur vzcyrzragngvba vf rnfl gb rkcynva, vg znl or n tbbq vqrn.
+                        Anzrfcnprf ner bar ubaxvat terng vqrn -- yrg'f qb zber bs gubfr!
+                    </p>
+                </article>
+
+                <article>
+                    <h3> Article Header </h3>
+
+                    <p>
+                        Ornhgvshy vf orggre guna htyl.
+                        Rkcyvpvg vf orggre guna vzcyvpvg.
+                        Fvzcyr vf orggre guna pbzcyrk.
+                        Pbzcyrk vf orggre guna pbzcyvpngrq.
+                        Syng vf orggre guna arfgrq.
+                        Fcnefr vf orggre guna qrafr.
+                        Ernqnovyvgl pbhagf.
+                        Fcrpvny pnfrf nera'g fcrpvny rabhtu gb oernx gur ehyrf.
+                        Nygubhtu cenpgvpnyvgl orngf chevgl.
+                        Reebef fubhyq arire cnff fvyragyl.
+                        Hayrff rkcyvpvgyl fvyraprq.
+                        Va gur snpr bs nzovthvgl, ershfr gur grzcgngvba gb thrff.
+                        Gurer fubhyq or bar-- naq cersrenoyl bayl bar --boivbhf jnl gb qb vg.
+                        Nygubhtu gung jnl znl abg or boivbhf ng svefg hayrff lbh'er Qhgpu.
+                        Abj vf orggre guna arire.
+                        Nygubhtu arire vf bsgra orggre guna *evtug* abj.
+                        Vs gur vzcyrzragngvba vf uneq gb rkcynva, vg'f n onq vqrn.
+                        Vs gur vzcyrzragngvba vf rnfl gb rkcynva, vg znl or n tbbq vqrn.
+                        Anzrfcnprf ner bar ubaxvat terng vqrn -- yrg'f qb zber bs gubfr!
+                    </p>
+                </article>
+
+                <article>
+                    <h3> Article Header </h3>
+
+                    <p>
+                        Ornhgvshy vf orggre guna htyl.
+                        Rkcyvpvg vf orggre guna vzcyvpvg.
+                        Fvzcyr vf orggre guna pbzcyrk.
+                        Pbzcyrk vf orggre guna pbzcyvpngrq.
+                        Syng vf orggre guna arfgrq.
+                        Fcnefr vf orggre guna qrafr.
+                        Ernqnovyvgl pbhagf.
+                        Fcrpvny pnfrf nera'g fcrpvny rabhtu gb oernx gur ehyrf.
+                        Nygubhtu cenpgvpnyvgl orngf chevgl.
+                        Reebef fubhyq arire cnff fvyragyl.
+                        Hayrff rkcyvpvgyl fvyraprq.
+                        Va gur snpr bs nzovthvgl, ershfr gur grzcgngvba gb thrff.
+                        Gurer fubhyq or bar-- naq cersrenoyl bayl bar --boivbhf jnl gb qb vg.
+                        Nygubhtu gung jnl znl abg or boivbhf ng svefg hayrff lbh'er Qhgpu.
+                        Abj vf orggre guna arire.
+                        Nygubhtu arire vf bsgra orggre guna *evtug* abj.
+                        Vs gur vzcyrzragngvba vf uneq gb rkcynva, vg'f n onq vqrn.
+                        Vs gur vzcyrzragngvba vf rnfl gb rkcynva, vg znl or n tbbq vqrn.
+                        Anzrfcnprf ner bar ubaxvat terng vqrn -- yrg'f qb zber bs gubfr!
+                    </p>
+                </article>
+            </section>
+
+        </main>
+
+    
+
+
+
+
+
+        <footer>
+            <!-- Contains footer data. -->
+
+            <p> This footer contains no information. </p>
+        </footer>
+
     </body>
 </html>
