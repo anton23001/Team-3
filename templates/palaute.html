@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+    <head>
+        <title>Tietotekniikkasivusto Keskustelu</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style_flexbox.css">
+        <link rel="stylesheet" href="../css/style-Ville.css">
+    </head>
+
+    <body>
+
+        <header class="Header-part">
+            <!-- Contains main header and login button. -->
+            <button onclick="location.href='../templates/login.html'" type="button" class="login"> Kirjaudu / Rekister&ouml;idy</button>
+            <h1 class="Headline"> Tietotekniikkasivusto </h1>
+            <p> <i>Tietotekniikkaan liittyv&auml;&auml; tietoa tietotekniikasta kiinnostuneille.</i> </p>
+        </header>
+
+        <nav id="navigation-bar">
+            <!-- Contains navigation menu with Home, Uutiset, Arvostelut, Keskustelut + Palaute -->
+
+            <ul>
+                <li> <a href="../index.html"> Etusivu </a> </li>
+                <li> <a href="../templates/news.html"> Uutiset </a> </li>
+                <li> <a href="../templates/reviews.html"> Arvostelut </a> </li>
+                <li> <a href="../templates/discussion.html"> Keskustelu </a> </li>
+                <li> <a href="../templates/palaute.html"> Palaute </a> </li>
+            </ul>
+        </nav>
+
+        <main id="main-content">
+            <!-- Making main and aside tags as childs of a section tag makes it easier to make the aside tags on side. -->
+
+            <aside class="content-section-child">
+                <!-- Left sidebar -->
+                <h3> Viimeisimmät arvostelut </h3>
+                <p> Lorem ipsum dolor sit amet.. </p>
+                <p> Lorem ipsum dolor sit amet.. </p>
+            </aside>
+            
+        <section class="content-section-child"> 
+            <h3>Palaute-osio </h3>
+            <div class="review-box">
+                <h3>Palauteboksi: </h3>
+                <p> Kerro meille parannusehdotuksia tai palautetta.</p>
+                <p> Voitte myös kertoa mitä tuotetta haluatte arvosteltavaksi.</p>
+                
+            </div>
+            
+            <form>
+                <label for="review">Palautteesi:</label><br>
+                <textarea id="review" name="review" rows="4" cols="50"></textarea><br>
+                <input type="submit" value="Lähetä">
+            </form>
+            <!-- Tähän voi kaiketi jatkoa varten käyttää javascriptiä, esim. palautteenne on vastaanotettu prompti tjsp. -->
+        </section>
+        </main>
+
+        <footer>
+            <!-- Contains footer data. -->
+
+            <p> This footer contains no information. </p>
+        </footer>
+
+    </body>
+</html>

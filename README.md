@@ -7,7 +7,10 @@ https://www.figma.com/file/uaWpSvWpAgtmfbA4ST5kBo/Projektity%C3%B6?type=design&n
 
 
 ### Anton Ollila
-
+    Lisätty palaute.html perusrakenteita hyväksikäyttäen, johon tehty "palauteboksi", jossa on submit-painike. 
+    Tähän voi jatkossa hyödyntää javascriptiä.
+    Lisätty nav-bareihin linkit joka sivulle ja katsottu että toimii.
+    Validoitu vielä kaikki varmuudeksi ja korjattu palaute.html -sivun virheet.
 
 ### Ville Kylliäinen
     Tein etusivulle style-Ville.css pohjan
