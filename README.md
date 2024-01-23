@@ -14,6 +14,7 @@ https://www.figma.com/file/uaWpSvWpAgtmfbA4ST5kBo/Projektity%C3%B6?type=design&n
     Tein login/rekisteröinti sivut ja niille oman css tiedoston
     Tein Uutiset, arvostelut ja keskustelun loppuun
     Tein sivulle pieniä ulkonäköön liittyviä muutoksia style-Ville tiedostoon
+    Kävin kaikki sivut validatorilla läpi
 
 ### Sebastian Weckström
 Aiomme luoda io-tech kaltaisen verkkokauppa-sivuston, koska siinä on mahdollista myöhemmin hyödyntää tietokantoja ja JavaScriptia.

@@ -30,30 +30,28 @@
 
 
 
-        <form action="" method="post">
+        <form action="#" method="post">
                 <!--Here you can sign in to the website-->
             <div>
                 <label for="email">Sähköpostiosoite</label><br>
-                <input type="email" name="email" id="email" required/>
+                <input type="email" name="email" id="email" required>
             </div>
             <div>
                 <label for="password">Salasana</label><br>
-                <input type="password" name="password" id="password" required/>
+                <input type="password" name="password" id="password" required>
             </div>
-            <div id="button">
+            <div class="button">
                 <button type="button">Kirjaudu</button>
             </div>
             
         </form>
         
-        <section class="register">
+        <div class="register">
             <i>Etkö ole rekisteröitynyt?</i>
-            <div id="button">
-                <a href="../templates/register.html">
-                    <button type="button">Rekisteröidy</button>
-                </a>
+            <div class="button">
+                <button onclick="location.href='../templates/register.html'" type="button">Rekisteröidy</button>
             </div>
-        </section>
+        </div>
 
 
 
