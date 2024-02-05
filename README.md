@@ -10,7 +10,7 @@ https://www.figma.com/file/uaWpSvWpAgtmfbA4ST5kBo/Projektity%C3%B6?type=design&n
     Lisätty palaute.html perusrakenteita hyväksikäyttäen, johon tehty "palauteboksi", jossa on submit-painike. 
     Tähän voi jatkossa hyödyntää javascriptiä.
     Lisätty nav-bareihin linkit joka sivulle ja katsottu että toimii.
-    Validoitu vielä kaikki varmuudeksi ja korjattu palaute.html -sivun virheet.
+    Validoitu vielä kaikki varmuudeksi ja korjattu palaute.html -sivun virheet. Vaihdeltu vielä muotoilua ko. sivulle.
 
 ### Ville Kylliäinen
     Tein etusivulle style-Ville.css pohjan

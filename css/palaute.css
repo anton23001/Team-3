@@ -1,0 +1,84 @@
+
+/* css pohja meidän etusivulle. Voi hyödyntää muillakin sivuilla *kopioitu style-Ville.css* */
+
+body{
+  background-color: #1d1996;
+  
+  }
+  .Header-part{
+      color: #f0f8ff;
+      font:  1.2rem "Fira Sans", sans-serif;
+  }
+  .Headline{
+      font-weight: 100;
+  }
+  
+  a{
+      color: #f0f8ff;
+      font-style: italic;
+      font-family: inherit;
+      font-size: x-large;
+  }
+  
+  a:hover{
+      background-color: #2828f4;
+  }
+  
+  .login{
+      border-radius: 25px; 
+      font-style: italic; 
+      color: #f0f8ff; 
+      background-color: #0000ff; 
+      float: right;
+      border: #0000ff solid;
+      font-size: 18px;
+      cursor: pointer;
+  }
+  
+  button:hover{
+      background-color: #2828f4;
+      color: #f0f8ff;
+      font-style: italic;
+      border: #f0f8ff solid;
+  }
+  
+  nav{
+      background-color: #0000ff;
+  }
+  
+  #main-content{
+      background-color: #f0f8ff;
+  
+  }
+  aside{
+      background-color: #f0f8ff;
+      border: 1px solid #0000ff;
+      
+  }
+  
+  section{
+      background-color: #f0f8ff;
+      border: 1px solid #0000ff;
+      overflow: scroll;
+  }
+  
+  .content-section-child{
+      padding: 5px;
+  }
+  
+  article{
+      padding: 5px;
+  }
+  footer{
+      color: #f0f8ff;
+      text-align: center;
+  }
+  
+  H1{
+      font-style: italic; 
+      color: #f0f8ff; 
+  }
+  
+.bg-custom-color {
+    background-color: #1d1996;
+  }
