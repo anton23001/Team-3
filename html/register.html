@@ -33,38 +33,42 @@
         </nav>
     
         <section>
+            <script>
+                function luoKayttaja(lomake){
+                    var henkilo=new Object();
+                    henkilo.tunnus=lomake.tunnus.value;
+                    henkilo.etunimi=lomake.etunimi.value;
+                    henkilo.sukunimi=lomake.sukunimi.value;
+                    henkilo.email=lomake.email.value;
+                    henkilo.password=lomake.password.value;
+                    
+                    var jsonHenkilo=JSON.stringify(henkilo);
+                    
+                    xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                      if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("result").innerHTML =this.responseText;
+                      }
+                    };
+                    xmlhttp.open("POST", "../php/register.php", true);
+                    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xmlhttp.send("henkilo=" + jsonHenkilo);	
+                }
+                </script>
+
             <h2>Tietotekniikkasivuston rekisteröityminen</h2>
             
-            <form action="../php/register.php" method="post">
-                <div>
-                    <label for="name">Etunimi</label><br>
-                    <input type="text" name="fName" id="name" required minlength="3" maxlength="8">
-                </div>
-                <div>
-                    <label for="lastName">Sukunimi</label><br>
-                    <input type="text" name="lName" id="lastName" required minlength="5" maxlength="15">
-                </div>
-                <div>
-                    <label for="bod">Syntymäpäivä</label><br>
-                    <input type="date" name="bod" id="bod">
-                </div>
-                <div>
-                    <label for="email">Sähköpostiosoite</label><br>
-                    <input type="email" name="email" id="email" required>
-                </div>
-                <div>
-                    <label for="user_account">Käyttäjänimi</label><br>
-                    <input type="text" name="user_account" id="user_account" required pattern="[A-Za-z]+" required minlength="5" maxlength="8">
-                </div>
-                <div>
-                    <label for="password">Salasana</label><br>
-                    <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-                </div>
-                <div class="button">
-                    <button type="submit">Lähetä</button>
-                </div>
+            <form id='henkilolomake'>
+                Etunimi: <input type='text' name='etunimi' value='' placeholder='Henkilon etunimi...'><br>
+                Sukunimi: <input type='text' name='sukunimi' value='' placeholder='Henkilon sukunimi...'><br>
+                Sähköposti: <input type='email' name='email' value='' placeholder='Sähköposti osoite..'><br>
+                Käyttäjätunnus: <input type='text' name='tunnus' value='' placeholder='Käyttäjätunnus'><br>
+                Salasana: <input type='password' name='password' value='' placeholder='Salasana'><br>
+                <input type='button' name='ok' value='Lähetä' onclick='luoKayttaja(this.form);'><br>
             </form>
+            <p id='result'>
+                Palaute tähän
+                </p>
         </section>  
 
 
