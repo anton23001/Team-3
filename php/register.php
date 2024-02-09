@@ -6,12 +6,11 @@ if (!($henkilo=tarkistaJson($json))){
     print "Täytä kaikki kentät";
     exit;
 }
-//avataan yhteys tietokantaan
+//Tästä alkaa yhteyden avaus tietokantaan
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
 //ht-suojaus laitettu valmiiksi
 $init=parse_ini_file("./.ht.asetukset.ini");
-
 try{
     //$yhteys=mysqli_connect("db", "root", "password", "user_data");
 
@@ -23,13 +22,12 @@ catch(Exception $e){
     exit;
 }
 
-//!!TÄMÄ ON OPETTAJALTA SAATU VINKKI!! 
+/*!!TÄMÄ ON OPETTAJALTA SAATU VINKKI!! 
 // $tulos=mysqli_query($yhteys, "select * from user where user_account=$henkilo->tunnus");
 // if ($rivi=mysqli_fetch_object($tulos)){
 //     print "Käyttäjätunnus on jo olemassa";
 //     exit;
-// }
-
+}*/
 
 //Tarkistaa että löytyykö tietokannasta jo sama käyttäjätunnus
 $sql="select * from user where user_account = ?";
@@ -42,7 +40,6 @@ $sql="select * from user where user_account = ?";
         print "Käyttäjätunnus on varattu";
         exit;
     }
-
 //Tarkistetaan että löytyykö tietokannasta jo sama sähköpostiosoite 
 $sql="select * from user where email = ?";
 
@@ -55,9 +52,9 @@ $sql="select * from user where email = ?";
         exit;
     }
 
-//Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
-//joihin laitetaan muuttujien arvoja
-
+/*Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
+joihin laitetaan muuttujien arvoja
+salasanan tallennus tietokantaa menee kryptattuna (tässä SHA2)*/
 $sql="insert into user (user_account, etunimi, sukunimi, email, password) values(?, ?, ?, ?, SHA2(?, 256))";
 
 try{
