@@ -62,7 +62,8 @@ try{
     mysqli_stmt_bind_param($stmt, 'sssss', $henkilo->tunnus, $henkilo->etunimi, $henkilo->sukunimi, $henkilo->email, $henkilo->password);
     mysqli_stmt_execute($stmt);
     mysqli_close($yhteys);
-    print "Rekisteröinti onnistui";
+    print "Rekisteröinti onnistui<br>";
+    print "<a href='../html/login.html'>Kirjaudu sisään</a>"
 }
 catch(Exception $e){
     print "Tapahtui joku virhe! Yritä myöhemmin uudelleen.";
