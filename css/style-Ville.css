@@ -23,8 +23,29 @@ a{
 a:hover{
     background-color: #2828f4;
 }
+.logout{
+    border-radius: 25px; 
+    font-style: italic; 
+    color: #f0f8ff; 
+    background-color: #0000ff; 
+    float: right;
+    border: #0000ff solid;
+    font-size: 18px;
+    cursor: pointer;
+
+}
 
 .login{
+    border-radius: 25px; 
+    font-style: italic; 
+    color: #f0f8ff; 
+    background-color: #0000ff; 
+    float: right;
+    border: #0000ff solid;
+    font-size: 18px;
+    cursor: pointer;
+}
+.lista{
     border-radius: 25px; 
     font-style: italic; 
     color: #f0f8ff; 
@@ -77,4 +98,14 @@ footer{
 H1{
     font-style: italic; 
     color: #f0f8ff; 
+}
+H2{
+    font-style: italic; 
+    color: #f0f8ff; 
+}
+
+table{
+    font-style: italic; 
+    color: #f0f8ff; 
+    border: white;
 }

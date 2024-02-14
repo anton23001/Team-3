@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fi">
     <head>
         <title>Tietotekniikkasivusto Kirjautuminen</title>
@@ -29,23 +28,46 @@
             </ul>
         </nav>
 
+        <script>
+            //Funktiossa luodaan Javascript olio henkilo ja annetaan sille arvot lomakkeen kentistä
+            function lahetaKayttaja(lomake){
+                var henkilo=new Object();
+                henkilo.tunnus=lomake.tunnus.value;
+                henkilo.password=lomake.password.value;
+                var jsonHenkilo=JSON.stringify(henkilo);
+                
+                /*Olio henkilo lähetetään JSON-muotoisena php-ohjelmalle login.php
+                Jos em. php -ohjelma palauttaa tekstin 'ok', avataan sivu 'tervetuloa.php'
+                Javascript lauseella: window.location.assign("../php/tervetuloa.php");
+                Muutoin pysytään tällä samalla sivulla ja debuggia varten näytetään lähetetyt tiedot elementissä 'result'
+                tai virhetilanteessa näytetään virheilmoitus. 
+                Lähetetyt tiedot ja virheilmoitus ovat php-ohjelmalta login.php tulevaa dataa - kuten em. 'ok'.
+                */
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                        if (this.responseText=="ok"){
+                            window.location.assign("../php/tervetuloa.php");
+                        }
+                        else{
+                            document.getElementById("result").innerHTML = this.responseText;
+                        }
+                  }
+                };
+                xmlhttp.open("POST", "../php/login.php", true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlhttp.send("henkilo=" + jsonHenkilo);	
+            }
+            </script>
 
-        
-        <form action="../php/login.php" method="post">
-                <!--Here you can sign in to the website-->
-            <div>
-                <label for="user_account">Käyttäjätunnus</label><br>
-                <input type="text" name="user_account" id="user_account" required>
-            </div>
-            <div>
-                <label for="password">Salasana</label><br>
-                <input type="password" name="password" id="password" required>
-            </div>
-            <div class="button">
-                <button type="button">Kirjaudu</button>
-            </div>
-            
-        </form>
+            <form id='henkilolomake'>
+            Käyttäjätunnus: <input type='text' name='tunnus' value='' placeholder='Käyttäjätunnus...'><br>
+            Salasana: <input type='password' name='password' value='' placeholder='Salasana...'><br>
+            <input type='button' name='ok' value='Lähetä' onclick='lahetaKayttaja(this.form);'><br>
+            </form>
+            <p id='result'>
+            Palaute tähän
+            </p>
         
         <div class="register">
             <i>Etkö ole rekisteröitynyt?</i>

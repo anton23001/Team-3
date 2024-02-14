@@ -49,3 +49,6 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+#result{
+    text-align: center;
+}

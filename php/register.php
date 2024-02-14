@@ -63,7 +63,7 @@ try{
     mysqli_stmt_execute($stmt);
     mysqli_close($yhteys);
     print "Rekisteröinti onnistui<br>";
-    print "<a href='../html/login.html'>Kirjaudu sisään</a>"
+    print "<a href='../html/login.html'>Kirjaudu sisään</a>";
 }
 catch(Exception $e){
     print "Tapahtui joku virhe! Yritä myöhemmin uudelleen.";
