@@ -23,6 +23,7 @@ if (!isset($_SESSION["henkilo"])){
         </ul>
     </nav>
     <!-- html-koodi loppuu -->
+
 <?php
 include "../html/header.html";
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
@@ -39,11 +40,16 @@ catch(Exception $e){
 }
 //henkilölistan tulostaminen taulukkoon
 $tulos=mysqli_query($yhteys, "select user_account from user");
-print "<table border='1'>";
+if (mysqli_num_rows($tulos) > 0){
+    print "<table border='1'>";
 while ($rivi=mysqli_fetch_object($tulos)){
     print "<tr><td>$rivi->user_account\n";
 }
 print "</table>";
+} else {
+    print "Ei ole muita!";
+}
+
 mysqli_close($yhteys);
 
 include "../html/footer.html";
