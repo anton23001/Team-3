@@ -5,6 +5,9 @@ $username = "root";
 $password = "password";
 $dbname = "user_data";
 
+// Vai pitääkö tehdä vastaavasti, kuin muissa esim:
+//$yhteys=mysqli_connect($init["palvelin"], $init["tunnus"], $init["pass"], $init["tk"]);
+
 // Luo yhteys
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -22,9 +25,9 @@ $message = $_POST['message'];
 $sql = "INSERT INTO guestbook (name, email, message) VALUES ('$name', '$email', '$message')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "Tiedot lisätty onnistuneesti.";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Virhe: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
