@@ -11,6 +11,8 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="../jscript/vieraskirja.js"></script> 
+        <!-- tuotu vieraskirja javascript-tiedosto -->
     </head>
 
     <body class="bg-custom-color">
@@ -36,7 +38,7 @@
 
         <main id="main-content">
             <!-- Making main and aside tags as childs of a section tag makes it easier to make the aside tags on side. -->
-
+            
             <aside class="content-section-child">
                 <!-- Left sidebar -->
                 <h3> Viimeisimmät arvostelut </h3>
@@ -46,20 +48,36 @@
             
         <section class="content-section-child"> 
             <div class="review-box">
-                <h3>Palautelaatikko: </h3>
+                <h3>Vieraskirja: </h3>
                 <p> Kerro meille parannusehdotuksia tai palautetta.</p>
                 <p> Voitte myös kertoa mitä tuotetta haluatte arvosteltavaksi.</p>
-                
-            </div>
 
-            <form style="margin-top: 1%;">
-                <div style="margin-bottom: 10px;">
-                  <label for="review">Palautteesi:</label><br>
-                  <textarea id="review" name="review" rows="4" cols="50"></textarea>
-                </div>
-                <input type="submit" value="Lähetä" style="background-color: #1d1996; color: #fff; padding: 8px 16px; border: none; border-radius: 4px;">
-              </form>
-            <!-- Tähän voi kaiketi jatkoa varten käyttää javascriptiä, esim. palautteenne on vastaanotettu prompti tjsp. -->
+                <!-- GuestForm lähettää nimen, sähköpostin ja viestin -->
+                <form id="guestForm" action="../php/vieraskirja.php" method="post"> 
+                    <div class="form-input"> 
+                        <label for="name">Nimenne: </label> 
+                        <input type="text"
+                               id="name" name="name"
+                               required> 
+                    </div>
+                
+                    <div class="form-input"> 
+                        <label for="email">Sähköposti: </label> 
+                        <input type="text" 
+                               id="email" name="email" 
+                               required> 
+                    </div>
+                </form> 
+                <div id="guestList"></div> 
+                
+                <form id="guestForm" style="margin-top: 1%;">
+                    <div style="margin-bottom: 10px;">
+                        <label for="message">Viestinne: </label><br>
+                        <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                    </div>
+                    <input type="submit" value="Lähetä" style="background-color: #1d1996; color: #fff; padding: 8px 16px; border: none; border-radius: 4px;">
+                </form>
+            
         </section>
         </main>
 
