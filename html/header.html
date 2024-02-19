@@ -11,3 +11,21 @@
     <title>Tervetuloa</title>
 </head>
 <body>
+
+    <!-- html koodia jolla saadaan painikkeet ja hakuvalikko  -->
+    <header class="Header-part">
+        <!-- Contains main header and logout button. -->
+        <button onclick="location.href='../php/logout.php'" type="button" class="logout"> Kirjaudu ulos</button> 
+        <h1 class="Headline"> Tietotekniikkasivusto </h1>
+        <p> <i>Tietotekniikkaan liittyv&auml;&auml; tietoa tietotekniikasta kiinnostuneille.</i> </p>
+    </header>
+
+    <nav id="navigation-bar">
+        <!-- Contains navigation menu with Home, Uutiset, Arvostelut, Keskustelut -->
+
+        <ul>
+            <button onclick="location.href='../php/tervetuloa.php'" type="button" class="lista">Home</button>
+            <button onclick="location.href='../php/henkilolista.php'" type="button" class="lista">Muut käyttäjät</button>
+        </ul>
+    </nav>
+    <!-- html-koodi loppuu -->

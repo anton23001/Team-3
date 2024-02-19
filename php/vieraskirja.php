@@ -1,38 +1,52 @@
 <?php
 // Tietokantayhteyden muodostaminen
-$servername = "db";
-$username = "root";
-$password = "password";
-$dbname = "user_data";
+$json=isset($_POST["henkilo"]) ? $_POST["henkilo"] : "";
 
-// Vai pitääkö tehdä vastaavasti, kuin muissa esim:
-//$yhteys=mysqli_connect($init["palvelin"], $init["tunnus"], $init["pass"], $init["tk"]);
-
-// Luo yhteys
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Tarkista yhteys
-if ($conn->connect_error) {
-    die("Yhteys epäonnistui: " . $conn->connect_error);
+//ehtolause jonka tarkoitus on ilmoittaa jos joku kenttä on tyhjä
+if (!($henkilo=tarkistaJson($json))){
+    print "Täytä kaikki kentät";
+    exit;
 }
 
-// Vastaanota lomakkeen tiedot
-$name = $_POST['name'];
-$email = $_POST['email'];
-$message = $_POST['message'];
+//Tästä alkaa yhteyden avaus tietokantaan
+mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
-// Tietojen lisääminen tietokantaan (eri taulu, kuin user-taulu)
-$sql = "INSERT INTO guestbook (name, email, message) VALUES ('$name', '$email', '$message')";
+//ht-suojaus laitettu valmiiksi
+$init=parse_ini_file("./.ht.asetukset.ini");
 
-if ($conn->query($sql) === TRUE) {
-    echo "Tiedot lisätty onnistuneesti.";
-} else {
-    echo "Virhe: " . $sql . "<br>" . $conn->error;
+try{
+    //$yhteys=mysqli_connect("db", "root", "password", "user_data");
+
+    //ht-suojaukseen tarvittava yhteys
+    $yhteys=mysqli_connect($init["palvelin"], $init["tunnus"], $init["pass"], $init["tk"]);
+}
+catch(Exception $e){
+    print "Yhteysvirhe";
+    exit;
 }
 
-$conn->close();
+$sql="insert into guestbook (name, email, message, timestamp) values(?, ?, ?, ?)";
 
-// Ohjaa takaisin vieraskirjan/palautteen sivulle
-header('Location: ../html/palaute.html');
-exit();
+try{
+    $stmt=mysqli_prepare($yhteys, $sql);
+    mysqli_stmt_bind_param($stmt, 'ssss', $henkilo->name, $henkilo->email, $henkilo->message, $henkilo->timestamp);
+    mysqli_stmt_execute($stmt);
+    mysqli_close($yhteys);
+    print "Viesti lähetetty<br>";
+
+}
+catch(Exception $e){
+    print "Tapahtui joku virhe! Yritä myöhemmin uudelleen.";
+}
+
+function tarkistaJson($json){
+    if (empty($json)){
+        return false;
+    }
+    $henkilo=json_decode($json, false);
+    if (empty($henkilo->name) || empty($henkilo->email) || empty($henkilo->message)){
+        return false;
+    }
+    return $henkilo;
+}
 ?>

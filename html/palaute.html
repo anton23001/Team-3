@@ -53,30 +53,42 @@
                 <p> Voitte myös kertoa mitä tuotetta haluatte arvosteltavaksi.</p>
 
                 <!-- GuestForm lähettää nimen, sähköpostin ja viestin -->
-                <form id="guestForm" action="../php/vieraskirja.php" method="post"> 
-                    <div class="form-input"> 
-                        <label for="name">Nimenne: </label> 
-                        <input type="text"
-                               id="name" name="name"
-                               required> 
-                    </div>
+                <script>
+                    function luoPalaute(lomake){
+                        var henkilo=new Object();
+                        henkilo.name=lomake.name.value;
+                        henkilo.email=lomake.email.value;
+                        henkilo.message=lomake.message.value;
+                        var jsonHenkilo=JSON.stringify(henkilo);
+                        
+                        xmlhttp = new XMLHttpRequest();
+                        xmlhttp.onreadystatechange = function() {
+                          if (this.readyState == 4 && this.status == 200) {
+                                document.getElementById("result").innerHTML =this.responseText;
+                          }
+                        };
+                        xmlhttp.open("POST", "../php/vieraskirja.php", true);
+                        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xmlhttp.send("henkilo=" + jsonHenkilo);	
+                    }
+                    </script>
+                                <form id='henkilopalaute'>
+                                    Etunimi: <input type='text' name='name' value='' placeholder='Henkilon etunimi...'><br>
+                                    Sähköposti: <input type='text' name='email' value='' placeholder='Sähköposti...'><br>
+                                    Viestinne:<textarea name='message'></textarea>
+                                    <input type='button' name='ok' value='Lähetä' onclick='luoPalaute(this.form);'><br>
+                                </form>
+                                <p id='result'>
+                                    Palaute tähän
+                                </p>
                 
-                    <div class="form-input"> 
-                        <label for="email">Sähköposti: </label> 
-                        <input type="text" 
-                               id="email" name="email" 
-                               required> 
-                    </div>
-                </form> 
-                <div id="guestList"></div> 
-                
-                <form id="guestForm" style="margin-top: 1%;">
+                <!-- <form id="guestForm" style="margin-top: 1%;">
                     <div style="margin-bottom: 10px;">
                         <label for="message">Viestinne: </label><br>
                         <textarea id="message" name="message" rows="4" cols="50"></textarea>
                     </div>
                     <input type="submit" value="Lähetä" style="background-color: #1d1996; color: #fff; padding: 8px 16px; border: none; border-radius: 4px;">
-                </form>
+                </form> -->
             
         </section>
         </main>
