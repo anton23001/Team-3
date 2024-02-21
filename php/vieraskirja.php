@@ -25,11 +25,11 @@ catch(Exception $e){
     exit;
 }
 
-$sql="insert into guestbook (name, email, message, timestamp) values(?, ?, ?, ?)";
+$sql="insert into guestbook (name, email, message) values(?, ?, ?)";
 
 try{
     $stmt=mysqli_prepare($yhteys, $sql);
-    mysqli_stmt_bind_param($stmt, 'ssss', $henkilo->name, $henkilo->email, $henkilo->message, $henkilo->timestamp);
+    mysqli_stmt_bind_param($stmt, 'sss', $henkilo->name, $henkilo->email, $henkilo->message);
     mysqli_stmt_execute($stmt);
     mysqli_close($yhteys);
     print "Viesti lähetetty<br>";
