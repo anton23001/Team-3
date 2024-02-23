@@ -81,5 +81,36 @@ Ylläpitopuoli on suojattu "htaccessilla" tai omalla tietokantaan pohjautuvalla 
 </ul>
 
 
+<ul>
+    <h3>Antonin merkinnät</h3>
+    <li>Maanantai 5.2.2024 <br>
+        Tein alustavan testikannan. 
+        create table user(id int not null auto_increment primary key, user_account varchar(100) not null, etunimi varchar(100) not null, sukunimi varchar(100) not null)engine=InnoDB; </li><br>
+    <li>Tiistai 6.2.2024 <br>
+        Koitin selvitellä hieman, että pitäisikö tehdä admin-käyttäjlle oma taulunsa vaiko ei. Lopputulema oli ei ja lisäsin vain testikantaan admin-kentälle 0 1 arvon ja defaultiksi 0 = ei admin, kun boolean arvoa samassa taulussa tuntui paremmmalta.
+        Googlettelin myös password_hashia, että miten en kanssa tulisi toimia jatkossa, kun lisää salasana-kenttää kantaan.
+        "ALTER TABLE user ADD COLUMN admin TINYINT(1) DEFAULT 0;"
+        Puskin myös seuraavaksi tunniksi valmiiksi saatavat yhteysvirhe.html + yhteysvirhe.php:n </li><br>
+    <li>Keskiviikko 7.2.2024 <br>
+        Muokkasin myös palauteosiota vielä vieraskirjaksi, eli koitin muokata html-tiedostoa vielä erinäköiseksi, jotta toiminnallisuus olisi helpompi guestbookille.
+        Kumosin kuitenkin tiistain tunnilla tehtyjä asioita aika paljon. </li><br>
+    <li>Maanantai-Keskiviikko 12-14.2.2024 <br>
+        Koitin kuumeessa toteuttaa guestbookin esimerkkiä geeksforgeeksin sivuilta edelleen ohjeita seuraten ja selvitellen, mutta javascriptin api-endpointtien yms. kanssa mentiin aika hakoteille.
+        Tutkin myös tehtyä koodia. </li><br>
+    <li>Perjantai 16.2.2024 <br>
+        Palasin käytännössä alkuun alkuperäisen vieraskirjan toteutuksen kanssa, koska vieraskirjan esimerkkiä olikin hankalahkompi toteuttaa. Pidin sitä tallessa edelleen varuiksi. </li><br>
+    <li>Lauantai 17.2.2024  <br>
+        Lisäsin kannan web_trtkp23_3 alle sisältäen 2 eri taulua, guestbookin ja userin pienien muutoksien jälkeen. Tässä vaiheessa myös lisättiin password columni myös, kun katselin aiemmin sairaana, että Ville oli myös selvitellyt salasanan salauksen kuntoon.
+        CREATE TABLE user (id INT AUTO_INCREMENT PRIMARY KEY, user_account VARCHAR(255) NOT NULL UNIQUE, etunimi VARCHAR(255) NOT NULL, sukunimi VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL) ENGINE=InnoDB;
+        CREATE TABLE guestbook (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, message TEXT NOT NULL, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB;
+        Katselin myös .ht.asetukset.ini :lle tehtävää muutosta, jotta yhteys onnistuu ja tästä kyselin Villeltä varmistusta. </li><br>
+    <li>Lauantai/Sunnuntai 17-18.2.2024 <br>
+        Koitin vielä muokkailla uudempaa versiota vieraskirja.php:stä ja palaute.html:ää valmiiksi.</li><br>
+    <li>Maanantai 19.2.2024 <br>
+        Pidettiin Villen kanssa pidempi palaveri aamusta, jossa sain avut lopun palaute.html:än toteutukseen. Siinä hyödynnettin Villen aiemmin luomaa skriptiä rekisteröinnistä.
+        vieraskirja.php koki myös muutosta, jotta tietokantayhteys saatiin viimeinkin toimimaan.
+        Katsottiin phpmyadmnista, että molempiin pöytiin onnistui lisäys, sekä uuden käyttäjän rekisteröinti/sisäänkirjautuminen. Katsottiin myös toiminnallisuus ja valmistauduttiin katselmointiin.</li><br>
+</ul>
+
 </body>
 </html>
