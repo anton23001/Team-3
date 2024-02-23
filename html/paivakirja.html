@@ -59,5 +59,27 @@ Ylläpitopuoli on suojattu "htaccessilla" tai omalla tietokantaan pohjautuvalla 
         -Palauteosio jossa käyttäjätiedot ja käyttäjän antama palaute tallentuu tietokantaan. </li>
 </ul>
 
+<ul>
+    <h3>Villen merkinnät</h3>
+    <li>Tiistai 6.2.2024 <br>
+        Rekisteröinti tehty muttei testattu. Käytin tähän ajax menetelmää. Meni käytännössä koko päivä että sain annetut tiedot meneen tietokantaan. 
+        Seuraavaksi pitää saada ehtolause tehtyä joka tarkistaa onko samanlainen käyttäjätunnus jo olemassa. (Ville) </li><br>
+    <li>Keskiviikko 7.2.2024 <br>
+        Sain tänään rekisteröinnin sille tolalle että nyt ilmoittaa jos tietokannassa on jo samanlainen käyttäjätunnus. 
+        Sitä voi nyt hyödyntää myös sähköpostin kohdalla. (Ville) </li><br>
+    <li>Torstai 8.2.2024 <br>
+        Rekisteröinti toimii. Nyt ilmoittaa jos tietokannasta löytyy entuudestaan sama käyttäjätunnus tai sähköpostiosoite. Rekisteröinti kryptaa käyttäjien salasanat meidän tietokantaan. 
+        Tein myös ht-suojaukselle tarvittavat toimenpiteet. ht.asetukset.ini löytyy samasta php kansiosta. (VIlle) </li><br>
+    <li>Maanantai 12.2.2024 <br>
+        Kokeilumielessä tein sisäänkirjatumisen joka vie tervetuloa sivulle. 
+        Muokkaan sivustoa niin että kirjaudu ulos painike näkyy jos käyttäjä on kirjautunut sivulle. (Ville) </li><br>
+    <li>Keskiviikko 14.2.2024 <br>
+        Kirjatuminen onnistuu verkkosivuille 
+        Onnistuneen kirjautumisen myötä käyttäjä ohjataan tervetuloa.php sivulle josta voi halutessaan tarkistella muita käyttäjiä ja kirjautua pihalle.(Ville) </li><br>
+    <li>15.2. ja 16.2.2024  <br>
+        Yritin saada käyttäjälistan tulostumaan prepared statementtia hyödyntämällä. En saanut sitä toimimaan, joten päätin käyttää query menetelmää. (Ville) </li><br>
+</ul>
+
+
 </body>
 </html>
